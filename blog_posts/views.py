@@ -15,7 +15,7 @@ def blog_posts(request):
   paged_posts = paginator.get_page(page)
 
   if request.method == 'POST':
-    ful_name    = request.POST['full_name']
+    full_name    = request.POST['full_name']
     email       = request.POST['email']
     subject     = request.POST['subject']
     message     = request.POST['message']
@@ -23,7 +23,7 @@ def blog_posts(request):
     # Send email
     send_mail(
       subject,
-      'You have a new message from ' + ful_name + '.' + '\n' + message,
+      'You have a new message from ' + full_name + '.' + '\n' + message + '\n Contact email: ' + email,
       email,
       [os.environ.get('EMAIL')],
       fail_silently=False
@@ -43,7 +43,7 @@ def blog_post(request, slug):
   post = get_object_or_404(BlogPost, slug=slug)
 
   if request.method == 'POST':
-    ful_name    = request.POST['full_name']
+    full_name    = request.POST['full_name']
     email       = request.POST['email']
     subject     = request.POST['subject']
     message     = request.POST['message']
@@ -51,11 +51,12 @@ def blog_post(request, slug):
     # Send email
     send_mail(
       subject,
-      'You have a new message from ' + ful_name + '.' + '\n' + message,
+      'You have a new message from ' + full_name + '.' + '\n' + message + '\n Contact email: ' + email,
       email,
       [os.environ.get('EMAIL')],
       fail_silently=False
     )
+
     messages.success(request, '! Your message has been sent. We will get back to you as soon as possible!')
     return redirect('blog_post', slug)
 

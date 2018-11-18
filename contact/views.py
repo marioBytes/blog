@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 
 def contact(request):
   if request.method == 'POST':
-    ful_name    = request.POST['full_name']
+    full_name    = request.POST['full_name']
     email       = request.POST['email']
     subject     = request.POST['subject']
     message     = request.POST['message']
@@ -14,7 +14,7 @@ def contact(request):
     # Send email
     send_mail(
       subject,
-      'You have a new message from ' + ful_name + '.' + '\n' + message,
+      'You have a new message from ' + full_name + '.' + '\n' + message + '\n Contact email: ' + email,
       email,
       [os.environ.get('EMAIL')],
       fail_silently=False

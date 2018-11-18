@@ -3,7 +3,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'H^bzVtQ#oimh!!4nP%6f@NuhjHPeqW#t#Flze4vjIXJVmkFbZyJTgn#H1U9eEUxQXkPFGjvz6E!b9'
 
 DEBUG = True
 
@@ -138,6 +138,11 @@ MEDIA_URL = '/media/'
 # Email Config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = 'andresmart92@gmail.com'
+EMAIL_HOST_PASSWORD = 'Fifiatemywoolsox1'
 EMAIL_USE_TLS = True
+
+try:
+  from .local_settings import *
+except ImportError:
+  pass
