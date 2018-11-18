@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% if messages %}
+    {% include 'partials/_alerts.html' %}
+  {% endif %}
+
+  <section id="blog-posts" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l12">
+            <h3>Blog Posts</h3>
+            <div class="row">
+              {% if queryset %}
+                {% for post in queryset %}
+                  <div class="col s12 m6 l4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="{{ post.image.url }}" alt="{{ post.image_alt }}">
+                        <span class="card-title">{{ post.title }}</span>
+                      </div>
+                      <div class="card-content">
+                        <div class="row">
+                          <div class="col m12">
+                            <span>{{ post.description }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-action">
+                        <a href="{% url 'blog_post' post.slug %}" class="btn green hoverable">View Post<i class="material-icons right">chevron_right</i></a>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <h1 class="center">No Posts Have Been Made Yet</h1>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Paginator -->
+        <div class="row">
+          <div class="col m12">
+            {% if queryset.has_other_pages %}
+              <ul class="pagination">
+
+                {% if queryset.has_previous %}
+                  <li class="waves-effect">
+                    <a href="?page={{ queryset.previous_page_number }}"><i class="material-icons">chevron_left</i></a>
+                  </li>
+
+                {% else %}
+                  <li class="disabled">
+                    <a><i class="material-icons">chevron_left</i></a>
+                  </li>
+                {% endif %}
+
+                {% for i in queryset.paginator.page_range %}
+                  {% if queryset.number == i %}
+                    <li class="active">
+                      <a>{{ i }}</a>
+                    </li>
+
+                  {% else %}
+                    <li class="waves-effect">
+                      <a href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+
+                {% if queryset.has_next %}
+                  <li class="waves-effect">
+                    <a href="?page={{ queryset.next_page_number }}"><i class="material-icons">chevron_right</i></a>
+                  </li>
+
+                {% else %}
+                  <li class="disabled">
+                    <a><i class="material-icons">chevron_right</i></a>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  </section>
+
+  {% include 'partials/_blog_posts_contact.html' %}
+
+{% endblock content %}

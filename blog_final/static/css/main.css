@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Main Styles */
+
+body {
+  background: #11161ae6 !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+section {
+  padding: 60px 0 !important;
+}
+
+section p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.8;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bg-dark {
+  background: #11161ae6 !important;
+  color: #fff !important;
+}
+
+.bg-light {
+  background: #fff !important;
+  color: #11161ae6 !important;
+}
+
+.prefix {
+    color: #666 !important;
+}
+
+.active {
+  color: #fff !important;
+}
+
+input[type=text]:focus + label, input[type=password]:focus + label, textarea:focus + label {
+  color: #fff !important;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  border-bottom: 1px solid #fff !important;
+  box-shadow: 0 1px 0 0 #fff !important;
+}
+
+input, textarea {
+  color: #fff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px !important;
+}
+
+.btn {
+  transition: all 0.33s;
+}
+
+.btn:hover {
+  background: #42a5f5 !important;
+}
+
+/* Selection Styles */
+
+.bg-dark p::selection, .bg-dark h3::selection, .bg-dark h4::selection {
+  background: #fff !important;
+  color: #11161ae6 !important;
+}
+
+.bg-light p::selection, .bg-light b::selection, .bg-light h2::selection, .bg-light h3::selection, .bg-light h4::selection {
+  background: #11161ae6 !important;
+  color: #fff !important;
+}
+
+.parallax-content h2::selection {
+  background: #fff !important;
+  color: #11161ae6 !important;
+}
+
+nav ul li a::selection {
+  background: #fff !important;
+  color: #11161ae6 !important;
+}
+
+span::selection {
+  background: #11161a !important;
+  color: #fff !important;
+}
+
+small::selection {
+    background: #11161a !important;
+    color: #fff !important;
+}
+
+/* Navbar Styles */
+
+.navbar-fixed nav {
+  background: rgba(17, 22, 26, 0.9) !important;
+}
+
+nav ul li a {
+  font-size: 19px;
+}
+
+nav ul li a:hover {
+  background: #fff !important;
+  color: #041a34 !important;
+}
+
+/* Sidenav Styles */
+
+.sidenav {
+  background: #11161ae6 !important;
+}
+
+.sidenav li a {
+  font-size: 18px;
+  color: #fff !important;
+}
+
+.sidenav li a:hover {
+  background: #fff !important;
+  color: #041a34 !important;
+}
+
+/* Parallax Styles */
+
+.parallax-container {
+  height: 60vh;
+}
+
+.parallax-container #showcase {
+    filter: blur(5px);
+}
+
+.parallax-container .showcase-logo {
+    width: 350px;
+    height: 350px;
+}
+
+.parallax-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.parallax-content {
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-content h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.align-all {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#services {
+  text-align: center;
+}
+
+/* Blog Posts Styles */
+
+#blog-posts {
+  padding-top: 0 !important;
+}
+
+#blog-posts .row .l12 .row .l4 img {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+.card-title {
+  background: #ffffffcc !important;
+  color: #11161a !important;
+  margin-bottom: 20px !important;
+  padding: 5px 15px 5px 20px !important;
+  text-align: center;
+}
+
+.card-action a:hover {
+  background: #66bb6a !important;
+}
+
+/* Blog Post Styles */
+
+#blog-post {
+  padding-top: 0 !important;
+}
+
+#blog-post .l10 .card-image img {
+    width: 100% !important;
+    height: 600px;
+}
+
+#blog-post .s12 .card-image img {
+    width: 100%;
+    height: 100%;
+}
+
+#blog-post .box .l6 p {
+  font-size: 15px;
+}
+
+#blog-post .box .s6 p {
+    font-size: 11px;
+}
+
+/* Alert Styles  */
+
+#messages .alert-success {
+    background: #4ee44e;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Paginator Styles */
+
+.pagination .active a {
+    background: #000 !important;
+}
+
+/* Footer */
+
+footer {
+  background: #fff;
+  color: #11161ae6;
+  padding: 25px 0;
+}
+
+footer div::selection {
+  background: #11161ae6 !important;
+  color: #fff !important;
+}
+
+@media (max-width:992px) {
+
+  #services .service-one, #services .service-two {
+    border-bottom: 1px dashed #fff !important;
+    padding: 1.2rem 0 !important;
+  }
+
+}
+
+@media (max-width:560px) {
+
+  nav .brand-logo {
+    font-size: 20px !important;
+  }
+
+  .parallax-container {
+    height: 50vh;
+  }
+
+  .parallax-container .showcase-logo {
+    margin-top: 20%;
+    height: 250px;
+    width: 250px;
+  }
+
+  .parallax-container h2 {
+    display: none;
+  }
+
+}
+
+@media (max-width:320px) {
+
+  nav .brand-logo {
+    font-size: 13px !important;
+  }
+
+  .parallax-container .showcase-logo {
+    margin-top: 5% !important;
+    height: 200px;
+    width: 200px;
+  }
+
+}
+
+@media (max-width:360px) {
+
+  nav .brand-logo {
+    font-size: 18px !important;
+  }
+
+  .parallax-container .showcase-logo {
+    margin-top: 5% !important;
+    height: 200px;
+    width: 200px;
+  }
+
+}
+
+@media (max-width:640px), (max-height:360px) {
+
+    .parallax-container .showcase-logo {
+        height: 200px;
+        width: 200px;
+    }
+
+    .parallax-container h2 {
+        display: none;
+    }
+
+}
+
+@media (max-width:240px) {
+
+    nav .brand-logo {
+        font-size: 12px !important;
+    }
+
+    .parallax-container .showcase-logo {
+        height: 120px;
+        width: 120px;
+    }
+
+}

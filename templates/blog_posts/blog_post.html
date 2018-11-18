@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+
+  {% if messages %}
+    {% include 'partials/_alerts.html' %}
+  {% endif %}
+
+  <section id="blog-post" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l10 offset-l1">
+            <h3>{{ queryset.title }}</h3>
+            <div class="card">
+              <div class="card-image">
+                <img src="{{ queryset.image.url }}" alt="{{ queryset.image_alt }}">
+              </div>
+              <small class="left" style="text-transform:capitalize;"><b>Posted By:</b> {{ user }}</small>
+              <small class="right"><b>Date Posted:</b> {{ queryset.upload_date | date }}</small>
+            </div>
+            <br>
+            <p>{{ queryset.article | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% include 'partials/_blog_post_contact.html' %}
+
+{% endblock content %}
